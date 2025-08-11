@@ -1,0 +1,26 @@
+# This workflow is named 'Poster Upload Status' and will appear in the Actions tab
+name: Poster Upload Status
+
+# This specifies when the workflow should run.
+# It is configured to run on every 'push' event to any branch.
+on:
+  push:
+    # The '**' wildcard means this workflow will trigger on pushes to any branch.
+    branches:
+      - '**'
+
+# A workflow is composed of one or more jobs.
+# This workflow has a single job named 'display_message'.
+jobs:
+  display_message:
+    # This job will run on the latest Ubuntu runner provided by GitHub.
+    runs-on: ubuntu-latest
+
+    # The 'steps' section defines the tasks that the job will execute.
+    steps:
+      # This is the first and only step.
+      # The 'name' provides a clear label for this step in the workflow logs.
+      - name: Display 'Poster Uploaded Successfully' Message
+        # The 'run' command executes a shell command on the runner.
+        # In this case, it simply prints the required string.
+        run: echo "Poster Uploaded Successfully"
